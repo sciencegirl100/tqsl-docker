@@ -3,6 +3,6 @@
 All you need is docker!
 
 ```bash
-docker build --output=. .
+docker buildx build --output type=local,dest=. .
 chmod +x tqsl.AppImage
 ```
