@@ -15,6 +15,8 @@ RUN sed -e 's/sudo //g' /tmp/tqsl/linux-make-appimage.sh > /tmp/tqsl/linux-appim
     chmod +x /tmp/tqsl/linux-appimage.sh && \
     /tmp/tqsl/linux-appimage.sh
 RUN mv /tmp/tqsl/tqsl-*.AppImage /tqsl.AppImage
+RUN mv /tmp/tqsl/apps/icons/key128.png /TrustedQSL.png
 
 FROM scratch
 COPY --from=builder /tqsl.AppImage /tqsl.AppImage
+COPY --from=builder /TrustedQSL.png /TrustedQSL.png
